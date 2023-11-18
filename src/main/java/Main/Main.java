@@ -1,4 +1,5 @@
-package com.example.n64games;
+package Main;
+//test
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

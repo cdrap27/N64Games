@@ -1,8 +1,10 @@
 module com.example.n64games {
     requires javafx.controls;
     requires javafx.fxml;
-            
-                            
-    opens com.example.n64games to javafx.fxml;
-    exports com.example.n64games;
+
+
+    opens Main to javafx.fxml;
+    exports Main;
+    exports Scenes;
+    opens Scenes to javafx.fxml;
 }
