@@ -5,6 +5,6 @@ module com.example.n64games {
 
     opens Main to javafx.fxml;
     exports Main;
-    exports Scenes;
-    opens Scenes to javafx.fxml;
+    exports SceneController;
+    opens SceneController to javafx.fxml;
 }
