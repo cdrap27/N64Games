@@ -16,29 +16,30 @@ import java.util.Objects;
 public class SignIn {
     public Hyperlink hyperllink;
 
+    public static Stage signInStage;
+
 
 
     public void onSignIn(ActionEvent actionEvent) {
     }
 
     public void onSignUp(MouseEvent mouseEvent) throws IOException {
-        Stage stage = new Stage();
-        System.out.print("hello, I'm working");
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Sign Up.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1099, 755);
 
-        stage.setTitle("Nintendo 64 Recommendation System");
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Sign Up.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 439, 464);
+
+        stage.setTitle("Sign Up");
         stage.setScene(scene);
         stage.show();
-            /*Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Sign Up.fxml")));
-            Stage stage = (Stage)((Button)mouseEvent.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root, 528, 532);
-            stage.setTitle("Add Customer");
-            stage.setScene(scene);
-            stage.getScene().getWindow().centerOnScreen();
-            stage.show();
 
-             */
+        Main.primaryStage.close();
+
+        signInStage = stage;
+        if (SignUp.signUpStage !=null)
+        {
+            SignUp.signUpStage.close();
+        }
 
     }
 }
