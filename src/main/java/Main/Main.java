@@ -2,6 +2,7 @@ package Main;
 //test
 
 import Read.gamesCSV;
+import Read.userCSV;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -23,6 +24,8 @@ public class Main extends Application {
         primaryStage = stage;
         gamesCSV.setLines();
         gamesCSV.setGames();
+        userCSV.setLines();
+        userCSV.setUsers();
     }
 
 
