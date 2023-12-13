@@ -1,6 +1,7 @@
 package Main;
 //test
 
+import Read.gamesCSV;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,6 +21,8 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
         primaryStage = stage;
+        gamesCSV.setLines();
+        gamesCSV.setGames();
     }
 
 
