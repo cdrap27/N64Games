@@ -40,7 +40,6 @@ public class gamesCSV {
             title = title.substring(1, title.length()-1);
             try
             {
-                System.out.println(values.get(4));
                 year = (values.get(3) + values.get(4));
             }
             catch(Exception e)

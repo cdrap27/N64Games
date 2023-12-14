@@ -1,7 +1,9 @@
 package Main;
 //test
 
+import Read.dlGamesCSV;
 import Read.gamesCSV;
+import Read.lGamesCSV;
 import Read.userCSV;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -26,6 +28,10 @@ public class Main extends Application {
         gamesCSV.setGames();
         userCSV.setLines();
         userCSV.setUsers();
+        lGamesCSV.setLines();
+        lGamesCSV.setLGames();
+        dlGamesCSV.setLines();
+        dlGamesCSV.setDLGames();
     }
 
 
