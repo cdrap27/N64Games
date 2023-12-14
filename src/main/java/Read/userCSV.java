@@ -22,12 +22,10 @@ public class userCSV {
     public static void setLines() throws IOException {
         String line;
         lines = new ArrayList<>();
-        System.out.println("hello");
         try {
             BufferedReader br = new BufferedReader(new FileReader("Users.CSV"));
             while ((line = br.readLine()) != null)
             {
-                System.out.println("added i guess");
                 lines.add(line);
             }
         }
@@ -41,21 +39,16 @@ public class userCSV {
     {
         List<Game> lGames = new ArrayList<Game>();
         List<Game> dlGames = new ArrayList<Game>();
-        //lGames.add(gameList.get(16));
-        //lGames.add(gameList.get(5));
-        //dlGames.add(gameList.get(4));
+
         for(int i = 0; i < lines.size(); i++)
         {
             List<String> values = Arrays.asList(lines.get(i).split(","));
             Users u = new Users(i, values.get(0), values.get(1), values.get(2),values.get(3),values.get(4),lGames,dlGames);
             userList.add(u);
-            System.out.println("added");
         }
-        System.out.println("current users" + userList.size());
     }
 
     public static void addUser(Users u) throws IOException {
         FileWriter fw = new FileWriter("Users.CSV");
-        System.out.println("found");
     }
 }
