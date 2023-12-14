@@ -49,6 +49,6 @@ public class userCSV {
     }
 
     public static void addUser(Users u) throws IOException {
-        FileWriter fw = new FileWriter("Users.CSV");
+        //FileWriter fw = new FileWriter("Users.CSV");
     }
 }
