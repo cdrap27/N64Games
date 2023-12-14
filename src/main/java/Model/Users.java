@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.List;
+
 public class Users {
 
     private int ID;
@@ -8,10 +10,12 @@ public class Users {
     private String email;
     private String fName;
     private String lName;
-    private Game[] lGames;
-    private Game[] dlGames;
+    //private Game[] lGames;
+    //private Game[] dlGames;
+    private List<Game> lGames;
+    private List<Game> dlGames;
 
-    public Users(int ID, String uName, String password, String email, String fName, String lName, Game[] lGames, Game[] dlGames){
+    public Users(int ID, String uName, String password, String email, String fName, String lName, List<Game> lGames, List<Game> dlGames){
         this.ID = ID;
         this.uName = uName;
         this.password = password;
@@ -40,10 +44,10 @@ public class Users {
     public void setlName(String lName){
         this.lName = lName;
     }
-    public void setlGames(Game[] lGames){
+    public void setlGames(List<Game> lGames){
         this.lGames = lGames;
     }
-    public void setDlGames(Game[] dlGames){
+    public void setDlGames(List<Game> dlGames){
         this.dlGames = dlGames;
     }
 
@@ -65,10 +69,10 @@ public class Users {
     public String getlName(){
         return lName;
     }
-    public Game[] getlGames(){
+    public List<Game> getlGames(){
         return lGames;
     }
-    public Game[] getDlGames(){
+    public List<Game> getDlGames(){
         return dlGames;
     }
 }

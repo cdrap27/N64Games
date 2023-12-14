@@ -37,15 +37,16 @@ public class userCSV {
 
     public static void setUsers()
     {
-        Game[] lGames = {gameList.get(2), gameList.get(16)};
-        Game[] dlGames = {gameList.get(4)};
+        List<Game> lGames = new ArrayList<Game>();
+        List<Game> dlGames = new ArrayList<Game>();
+        lGames.add(gameList.get(16));
+        lGames.add(gameList.get(5));
+        dlGames.add(gameList.get(4));
         for(int i = 0; i < lines.size(); i++)
         {
             List<String> values = Arrays.asList(lines.get(i).split(","));
             Users u = new Users(i, values.get(0), values.get(1), values.get(2),values.get(3),values.get(4),lGames,dlGames);
             userList.add(u);
-            System.out.println(i+ values.get(0)+ values.get(1)+ values.get(2)+ values.get(3)+ values.get(4)+ lGames+ dlGames);
-
         }
     }
 }

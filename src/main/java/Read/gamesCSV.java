@@ -36,10 +36,8 @@ public class gamesCSV {
         for(int i = 0; i < lines.size(); i++)
         {
             List<String> values = Arrays.asList(lines.get(i).split(","));
-            System.out.println(i + values.get(0) + values.get(1) + values.get(2) + values.get(3));
             title = values.get(0);
             title = title.substring(1, title.length()-1);
-            System.out.println(title);
             try
             {
                 System.out.println(values.get(4));
@@ -49,7 +47,6 @@ public class gamesCSV {
             {
                 year = values.get(3);
             }
-            System.out.println(year);
             Game g = new Game(i, title, values.get(1), values.get(2), year);
             gameList.add(g);
         }
