@@ -10,14 +10,13 @@
    <children>
       <TableView fx:id="n64Table" layoutX="57.0" layoutY="124.0" prefHeight="508.0" prefWidth="986.0">
         <columns>
-          <TableColumn fx:id="title" prefWidth="75.0" text="Title" />
-          <TableColumn fx:id="developer" prefWidth="75.0" text="Developers" />
-            <TableColumn fx:id="publisher" prefWidth="75.0" text="Publisher" />
-            <TableColumn fx:id="release" prefWidth="75.0" text="Release Date" />
-            <TableColumn fx:id="like" prefWidth="75.0" text="Liked" />
+          <TableColumn fx:id="title" prefWidth="284.0" text="Title" />
+          <TableColumn fx:id="developer" prefWidth="260.0" text="Developers" />
+            <TableColumn fx:id="publisher" prefWidth="253.0" text="Publisher" />
+            <TableColumn fx:id="release" prefWidth="188.0" text="Release Date" />
         </columns>
       </TableView>
-      <ChoiceBox fx:id="listView" layoutX="57.0" layoutY="85.0" prefHeight="25.0" prefWidth="205.0" />
       <Button fx:id="signIn" layoutX="855.0" layoutY="687.0" mnemonicParsing="false" onAction="#buttonClick" text="Button" />
+      <ChoiceBox fx:id="gameChoice" layoutX="57.0" layoutY="84.0" prefHeight="32.0" prefWidth="231.0" />
    </children>
 </AnchorPane>

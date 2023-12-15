@@ -68,7 +68,6 @@ public class SignUp {
         }
         else{
             for(int i =0; i < userList.size(); i++){
-                System.out.println(userList.get(i).getlGames().toString());
                 if(userField.getText().equals(userList.get(i).getuName())){
                     a.setTitle("User Found");
                     a.setContentText("Username already taken");

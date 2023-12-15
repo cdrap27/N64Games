@@ -52,6 +52,10 @@ public class gamesCSV {
 
     }
 
+    public static ObservableList<Game> getGameList(){
+        return gameList;
+    }
+
 
 
     }
