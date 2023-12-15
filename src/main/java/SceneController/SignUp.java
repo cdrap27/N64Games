@@ -3,6 +3,8 @@ package SceneController;
 import Main.Main;
 import Model.Game;
 import Model.Users;
+import Read.dlGamesCSV;
+import Read.lGamesCSV;
 import Read.userCSV;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -36,6 +38,8 @@ public class SignUp {
 
             userList.add(u);
             userCSV.addUser(u);
+            lGamesCSV.writeLGames(u);
+            dlGamesCSV.writeDLGames(u);
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Sign In.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 423, 339);

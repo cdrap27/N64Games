@@ -45,10 +45,19 @@ public class userCSV {
             List<String> values = Arrays.asList(lines.get(i).split(","));
             Users u = new Users(i, values.get(0), values.get(1), values.get(2),values.get(3),values.get(4),lGames,dlGames);
             userList.add(u);
+
         }
+        System.out.println("hello it is" + lines.get(lines.size() -1));
     }
 
     public static void addUser(Users u) throws IOException {
-        //FileWriter fw = new FileWriter("Users.CSV");
+        FileWriter fw = new FileWriter("Users.CSV", true);
+        String newLine =(u.getuName() + "," + u.getPassword() + "," + u.getEmail() + "," + u.getfName() + "," +
+                u.getlName());
+        lines.add(newLine);
+        System.out.println(newLine);
+        fw.append("\n" + newLine );
+        fw.close();
+
     }
 }
