@@ -6,6 +6,8 @@ import Model.Users;
 import Read.dlGamesCSV;
 import Read.lGamesCSV;
 import Read.userCSV;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -29,12 +31,13 @@ public class SignUp {
     public TextField lNameField;
     public Button create;
     public static Stage signUpStage;
+    public Button cancel;
 
     public void onCreate(ActionEvent actionEvent) throws IOException {
         if(createUserCheck() == true) {
-            List<Game> g = new ArrayList<Game>();
+            ObservableList<Game> g =  FXCollections.observableArrayList();
             Users u = new Users(userList.size(), userField.getText(), passField.getText(),emailField.getText(), fNameField.getText(),
-                    lNameField.getText(), g, g);
+                    lNameField.getText());
 
             userList.add(u);
             userCSV.addUser(u);
@@ -85,4 +88,14 @@ public class SignUp {
         return true;
     }
 
+    public void onCancel(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Sign In.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 423, 339);
+        stage.setTitle("Sign In");
+        stage.setScene(scene);
+        stage.show();
+        SignIn.signInStage.close();
+        signUpStage = stage;
+    }
 }

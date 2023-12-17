@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 import static Read.userCSV.userList;
+import static SceneController.SignUp.signUpStage;
 
 public class SignIn {
     public Hyperlink hyperllink;
@@ -22,7 +23,7 @@ public class SignIn {
     public Button signIn;
     public TextField userField;
     public TextField passField;
-    public Users currUser;
+    public static Users currUser;
 
 
 
@@ -37,6 +38,13 @@ public class SignIn {
             stage.show();
 
             Main.primaryStage.close();
+            try
+            {
+                signUpStage.close();
+            }
+            catch(Exception e){
+
+            }
         }
 
     }
@@ -53,9 +61,9 @@ public class SignIn {
         Main.primaryStage.close();
 
         signInStage = stage;
-        if (SignUp.signUpStage !=null)
+        if (signUpStage !=null)
         {
-            SignUp.signUpStage.close();
+            signUpStage.close();
         }
 
     }

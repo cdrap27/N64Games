@@ -1,5 +1,7 @@
 package Model;
 
+import javafx.collections.ObservableList;
+
 import java.util.List;
 
 public class Users {
@@ -12,18 +14,17 @@ public class Users {
     private String lName;
     //private Game[] lGames;
     //private Game[] dlGames;
-    private List<Game> lGames;
-    private List<Game> dlGames;
 
-    public Users(int ID, String uName, String password, String email, String fName, String lName, List<Game> lGames, List<Game> dlGames){
+
+
+    public Users(int ID, String uName, String password, String email, String fName, String lName){
         this.ID = ID;
         this.uName = uName;
         this.password = password;
         this.email = email;
         this.fName = fName;
         this.lName = lName;
-        this.lGames = lGames;
-        this.dlGames = dlGames;
+
     }
 
     public void setID(int ID){
@@ -44,12 +45,7 @@ public class Users {
     public void setlName(String lName){
         this.lName = lName;
     }
-    public void setlGames(List<Game> lGames){
-        this.lGames = lGames;
-    }
-    public void setDlGames(List<Game> dlGames){
-        this.dlGames = dlGames;
-    }
+
 
     public int getID(){
         return ID;
@@ -69,10 +65,5 @@ public class Users {
     public String getlName(){
         return lName;
     }
-    public List<Game> getlGames(){
-        return lGames;
-    }
-    public List<Game> getDlGames(){
-        return dlGames;
-    }
+
 }

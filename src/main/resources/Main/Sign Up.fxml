@@ -44,9 +44,14 @@
             <Font name="Times New Roman" size="20.0" />
          </font>
       </Text>
-      <Button fx:id="create" layoutX="160.0" layoutY="360.0" mnemonicParsing="false" onAction="#onCreate" prefHeight="47.0" prefWidth="220.0" text="Create Account">
+      <Button fx:id="create" layoutX="223.0" layoutY="360.0" mnemonicParsing="false" onAction="#onCreate" prefHeight="22.0" prefWidth="157.0" text="Create Account">
          <font>
-            <Font name="Times New Roman Bold" size="20.0" />
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="cancel" layoutX="160.0" layoutY="359.0" mnemonicParsing="false" onAction="#onCancel" prefHeight="34.0" prefWidth="58.0" text="Cancel">
+         <font>
+            <Font name="Times New Roman Bold" size="12.0" />
          </font>
       </Button>
    </children>

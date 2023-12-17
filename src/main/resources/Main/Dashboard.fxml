@@ -5,6 +5,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1099.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneController.Dashboard">
    <children>
@@ -16,7 +17,15 @@
             <TableColumn fx:id="release" prefWidth="188.0" text="Release Date" />
         </columns>
       </TableView>
-      <Button fx:id="signIn" layoutX="855.0" layoutY="687.0" mnemonicParsing="false" onAction="#buttonClick" text="Button" />
-      <ChoiceBox fx:id="gameChoice" layoutX="57.0" layoutY="84.0" prefHeight="32.0" prefWidth="231.0" />
+      <Button fx:id="exit" layoutX="1006.0" layoutY="695.0" mnemonicParsing="false" onAction="#onExit" text="Exit">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font></Button>
+      <ChoiceBox fx:id="gameChoice" layoutX="57.0" layoutY="84.0" onAction="#changeChoice" prefHeight="32.0" prefWidth="231.0" />
+      <Button fx:id="save" layoutX="933.0" layoutY="695.0" mnemonicParsing="false" onAction="#onSave" text="Save">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

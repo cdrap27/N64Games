@@ -30,9 +30,8 @@ public class Main extends Application {
         userCSV.setLines();
         userCSV.setUsers();
         lGamesCSV.setLines();
-        lGamesCSV.setLGames();
+
         dlGamesCSV.setLines();
-        dlGamesCSV.setDLGames();
 
     }
 
