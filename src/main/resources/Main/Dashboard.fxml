@@ -27,5 +27,15 @@
             <Font name="Times New Roman Bold" size="18.0" />
          </font>
       </Button>
+      <Button fx:id="like" layoutX="958.0" layoutY="640.0" mnemonicParsing="false" onAction="#onLike" prefHeight="32.0" prefWidth="85.0" text="Like">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="dislike" layoutX="857.0" layoutY="640.0" mnemonicParsing="false" onAction="#onDislike" prefHeight="32.0" prefWidth="85.0" text="Dislike">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

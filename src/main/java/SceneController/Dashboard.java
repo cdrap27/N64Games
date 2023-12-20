@@ -1,6 +1,7 @@
 package SceneController;
 
 import Main.Main;
+import Model.Game;
 import Model.Users;
 import Read.dlGamesCSV;
 import Read.lGamesCSV;
@@ -18,6 +19,9 @@ import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 import static Read.gamesCSV.gameList;
 import static Read.gamesCSV.getGameList;
@@ -34,12 +38,15 @@ public class Dashboard {
     public TableColumn release;
     public Button exit;
     public Button save;
+    public Button like;
+    public Button dislike;
 
 
     public void initialize(){
         System.out.println("id is " + currUser.getID());
         lGamesCSV.setLGames(currUser.getID());
         dlGamesCSV.setDLGames(currUser.getID());
+
         gameChoice.setItems(choices);
         gameChoice.setValue("All");
         n64Table.setItems(getGameList());
@@ -98,4 +105,55 @@ public class Dashboard {
         dlGamesCSV.writeDLGames(currUser);
     }
 
+    public void onLike(ActionEvent actionEvent) {
+        Game g = (Game) n64Table.getSelectionModel().getSelectedItem();
+        Alert a = new Alert(Alert.AlertType.WARNING);
+        if(g == null){
+            System.out.println("null");
+            a.setTitle("No selection");
+            a.setContentText("No game is selected.");
+            a.show();
+        }
+        else if(lGamesCSV.lGames.contains(g)){
+            a.setTitle("Game already liked");
+            a.setContentText("Game is already liked");
+            a.show();
+        }
+        else if(dlGamesCSV.dlGames.contains(g)){
+            dlGamesCSV.dlGames.remove(g);
+            lGamesCSV.lGames.add(g);
+        }
+        else{
+            lGamesCSV.lGames.add(g);
+        }
+
+        Comparator<Game> gameComparator = Comparator.comparing(Game::getID);
+        Collections.sort(lGamesCSV.lGames, gameComparator);
+    }
+
+    public void onDislike(ActionEvent actionEvent) {
+        Game g = (Game) n64Table.getSelectionModel().getSelectedItem();
+        Alert a = new Alert(Alert.AlertType.WARNING);
+        if(g == null){
+            System.out.println("null");
+            a.setTitle("No selection");
+            a.setContentText("No game is selected.");
+            a.show();
+        }
+        else if(dlGamesCSV.dlGames.contains(g)){
+            a.setTitle("Game already disliked");
+            a.setContentText("Game is already disliked");
+            a.show();
+        }
+        else if(lGamesCSV.lGames.contains(g)){
+            lGamesCSV.lGames.remove(g);
+            dlGamesCSV.dlGames.add(g);
+        }
+        else{
+            dlGamesCSV.dlGames.add(g);
+        }
+
+        Comparator<Game> gameComparator = Comparator.comparing(Game::getID);
+        Collections.sort(dlGamesCSV.dlGames, gameComparator);
+    }
 }

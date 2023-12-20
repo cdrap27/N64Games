@@ -42,7 +42,7 @@ public class lGamesCSV {
             List<String> values = Arrays.asList(lines.get(i).split(","));
             for (int j = 0; j < values.size(); j++) {
                 Integer x = Integer.parseInt(values.get(j));
-                x = x - 1;
+                //x = x - 1;
                 lGames.add(gameList.get(x));
             }
         } catch (Exception e) {

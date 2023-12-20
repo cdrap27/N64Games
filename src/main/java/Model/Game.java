@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.Comparator;
+
 public class Game {
     private int ID;
     private String title;
@@ -14,6 +16,7 @@ public class Game {
         this.publisher = publisher;
         this.release = release;
     }
+
 
     public int getID(){
         return ID;
