@@ -5,6 +5,7 @@ import Model.Game;
 import Model.Users;
 import Read.dlGamesCSV;
 import Read.lGamesCSV;
+import Read.topSellingCSV;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -40,6 +41,7 @@ public class Dashboard {
     public Button save;
     public Button like;
     public Button dislike;
+    public Button rGames;
 
 
     public void initialize(){
@@ -50,6 +52,7 @@ public class Dashboard {
         gameChoice.setItems(choices);
         gameChoice.setValue("All");
         n64Table.setItems(getGameList());
+        //n64Table.setItems(topSellingCSV.top40);
         title.setCellValueFactory(new PropertyValueFactory<>("title"));
         developer.setCellValueFactory(new PropertyValueFactory<>("developer"));
         publisher.setCellValueFactory(new PropertyValueFactory<>("publisher"));
@@ -155,5 +158,15 @@ public class Dashboard {
 
         Comparator<Game> gameComparator = Comparator.comparing(Game::getID);
         Collections.sort(dlGamesCSV.dlGames, gameComparator);
+    }
+
+    public void onRGames(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Recommended Games.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1052, 420);
+        stage.setTitle("Recommended Games");
+        stage.setScene(scene);
+        stage.show();
+
     }
 }

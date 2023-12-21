@@ -36,6 +36,10 @@ public class lGamesCSV {
         }
     }
 
+    public static ArrayList<String> getLines(){
+        return lines;
+    }
+
     public static void setLGames(int i) {
 
         try {

@@ -37,5 +37,10 @@
             <Font name="Times New Roman Bold" size="18.0" />
          </font>
       </Button>
+      <Button fx:id="rGames" layoutX="57.0" layoutY="640.0" mnemonicParsing="false" onAction="#onRGames" prefHeight="32.0" prefWidth="213.0" text="Recommended Games">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
