@@ -28,7 +28,10 @@ public class mlAlgorithm {
         int b = 0;
         double c = 0;
         for(int i = 1; i < lGamesCSV.getLines().size(); i++)
-        {   if(i == u.getID())
+        {  // if(rGames.size() != 0){
+            //rGames.clear();
+        //}
+            if(i == u.getID())
             {
                 System.out.println("skip");
             }
@@ -58,6 +61,7 @@ public class mlAlgorithm {
             alert.showAndWait();
 
             rGames.clear();
+            //topSellingCSV.setGames();
             rGames = topSellingCSV.top40;
         }
 

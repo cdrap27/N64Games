@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -38,6 +39,17 @@
          </font>
       </Button>
       <Button fx:id="rGames" layoutX="57.0" layoutY="640.0" mnemonicParsing="false" onAction="#onRGames" prefHeight="32.0" prefWidth="213.0" text="Recommended Games">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="search" layoutX="719.0" layoutY="84.0" onAction="#onSearch" prefHeight="32.0" prefWidth="231.0" />
+      <Button fx:id="searchButton" layoutX="962.0" layoutY="84.0" mnemonicParsing="false" onAction="#onSearchButton" text="Search">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="topSellers" layoutX="57.0" layoutY="695.0" mnemonicParsing="false" onAction="#onTop" prefHeight="32.0" prefWidth="120.0" text="Top Sellers!">
          <font>
             <Font name="Times New Roman Bold" size="18.0" />
          </font>

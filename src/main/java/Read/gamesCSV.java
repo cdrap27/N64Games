@@ -3,6 +3,7 @@ package Read;
 import Model.Game;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -56,6 +57,23 @@ public class gamesCSV {
         return gameList;
     }
 
-
+    public static ObservableList<Game> searchGames(String title){
+        title = title.toLowerCase();
+        ObservableList<Game> searched = FXCollections.observableArrayList();
+        for(int i = 0; i < gameList.size(); i++){
+            if(gameList.get(i).getTitle().toLowerCase().contains(title)){
+                searched.add(gameList.get(i));
+            }
+        }
+        if(searched.size() == 0){
+            Alert a =new Alert(Alert.AlertType.ERROR);
+            a.setContentText("No matching game found.");
+            a.setTitle("No Match");
+            a.show();
+            return gameList;
+        }
+        else{
+            return searched;}
+    }
 
     }

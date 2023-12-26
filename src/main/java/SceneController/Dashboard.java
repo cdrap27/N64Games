@@ -4,6 +4,7 @@ import Main.Main;
 import Model.Game;
 import Model.Users;
 import Read.dlGamesCSV;
+import Read.gamesCSV;
 import Read.lGamesCSV;
 import Read.topSellingCSV;
 import javafx.beans.value.ChangeListener;
@@ -24,8 +25,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 
-import static Read.gamesCSV.gameList;
-import static Read.gamesCSV.getGameList;
+import static Read.gamesCSV.*;
 import static SceneController.SignIn.currUser;
 
 public class Dashboard {
@@ -42,6 +42,9 @@ public class Dashboard {
     public Button like;
     public Button dislike;
     public Button rGames;
+    public TextField search;
+    public Button searchButton;
+    public Button topSellers;
 
 
     public void initialize(){
@@ -165,6 +168,45 @@ public class Dashboard {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Recommended Games.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1052, 420);
         stage.setTitle("Recommended Games");
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
+    public void onSearch(ActionEvent actionEvent) {
+        String title = search.getText();
+
+        if(gameChoice.getValue().equals("Liked")){
+            n64Table.setItems(lGamesCSV.searchGames(title));
+        }
+        else if (gameChoice.getValue().equals("Disliked")){
+            n64Table.setItems(dlGamesCSV.searchGames(title));
+        }
+        else if(gameChoice.getValue().equals("All")){
+            n64Table.setItems(gamesCSV.searchGames(title));
+        }
+
+    }
+
+    public void onSearchButton(ActionEvent actionEvent) {
+        String title = search.getText();
+
+        if(gameChoice.getValue().equals("Liked")){
+            n64Table.setItems(lGamesCSV.searchGames(title));
+        }
+        else if (gameChoice.getValue().equals("Disliked")){
+            n64Table.setItems(dlGamesCSV.searchGames(title));
+        }
+        else if(gameChoice.getValue().equals("All")){
+            n64Table.setItems(gamesCSV.searchGames(title));
+        }
+    }
+
+    public void onTop(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("salesGraph.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1271, 878);
+        stage.setTitle("Top Sellers");
         stage.setScene(scene);
         stage.show();
 

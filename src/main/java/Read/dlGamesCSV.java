@@ -4,6 +4,7 @@ import Model.Game;
 import Model.Users;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -95,4 +96,24 @@ public class dlGamesCSV {
        fw.close();
 
     }
+
+    public static ObservableList<Game> searchGames(String title){
+        title = title.toLowerCase();
+        ObservableList<Game> searched = FXCollections.observableArrayList();
+        for(int i = 0; i < dlGames.size(); i++){
+            if(dlGames.get(i).getTitle().toLowerCase().contains(title)){
+                searched.add(dlGames.get(i));
+            }
+        }
+        if(searched.size() == 0){
+            Alert a =new Alert(Alert.AlertType.ERROR);
+            a.setContentText("No matching game found.");
+            a.setTitle("No Match");
+            a.show();
+            return dlGames;
+        }
+        else{
+            return searched;}
+    }
+
 }
