@@ -22,14 +22,14 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
         primaryStage = stage;
-        gamesCSV.setLines();
-        gamesCSV.setGames();
-        userCSV.setLines();
-        userCSV.setUsers();
-        lGamesCSV.setLines();
-        dlGamesCSV.setLines();
-        topSellingCSV.setLines();
-        topSellingCSV.setGames();
+        //gamesCSV.setLines();
+        //gamesCSV.setGames();
+        //userCSV.setLines();
+        //userCSV.setUsers();
+        //lGamesCSV.setLines();
+        //dlGamesCSV.setLines();
+        //topSellingCSV.setLines();
+        //topSellingCSV.setGames();
 
     }
 
